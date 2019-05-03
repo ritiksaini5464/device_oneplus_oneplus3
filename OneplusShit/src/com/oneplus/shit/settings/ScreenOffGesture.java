@@ -61,6 +61,10 @@ public class ScreenOffGesture extends PreferenceFragment implements
     public static final String PREF_GESTURE_ARROW_DOWN = "gesture_arrow_down";
     public static final String PREF_GESTURE_ARROW_LEFT = "gesture_arrow_left";
     public static final String PREF_GESTURE_ARROW_RIGHT = "gesture_arrow_right";
+    public static final String PREF_GESTURE_DOWN_SWIPE = "gesture_down_swipe";
+    public static final String PREF_GESTURE_UP_SWIPE = "gesture_up_swipe";
+    public static final String PREF_GESTURE_LEFT_SWIPE = "gesture_left_swipe";
+    public static final String PREF_GESTURE_RIGHT_SWIPE = "gesture_right_swipe";
 
     private static final int DLG_SHOW_ACTION_DIALOG  = 0;
     private static final int DLG_RESET_TO_DEFAULT    = 1;
@@ -73,6 +77,10 @@ public class ScreenOffGesture extends PreferenceFragment implements
     private Preference mGestureArrowDown;
     private Preference mGestureArrowLeft;
     private Preference mGestureArrowRight;
+    private Preference mGestureDownSwipe;
+    private Preference mGestureUpSwipe;
+    private Preference mGestureLeftSwipe;
+    private Preference mGestureRightSwipe;
     private SwitchPreference mEnableGestures;
 
     private boolean mCheckPreferences;
@@ -134,6 +142,10 @@ public class ScreenOffGesture extends PreferenceFragment implements
         mGestureArrowDown = (Preference) prefs.findPreference(PREF_GESTURE_ARROW_DOWN);
         mGestureArrowLeft = (Preference) prefs.findPreference(PREF_GESTURE_ARROW_LEFT);
         mGestureArrowRight = (Preference) prefs.findPreference(PREF_GESTURE_ARROW_RIGHT);
+        mGestureDownSwipe = (Preference) prefs.findPreference(PREF_GESTURE_DOWN_SWIPE);
+        mGestureUpSwipe = (Preference) prefs.findPreference(PREF_GESTURE_UP_SWIPE);
+        mGestureLeftSwipe = (Preference) prefs.findPreference(PREF_GESTURE_LEFT_SWIPE);
+        mGestureRightSwipe = (Preference) prefs.findPreference(PREF_GESTURE_RIGHT_SWIPE);
 
         setupOrUpdatePreference(mGestureCircle, mScreenOffGestureSharedPreferences
                 .getString(PREF_GESTURE_CIRCLE, ActionConstants.ACTION_CAMERA));
@@ -147,6 +159,14 @@ public class ScreenOffGesture extends PreferenceFragment implements
                 .getString(PREF_GESTURE_ARROW_LEFT, ActionConstants.ACTION_MEDIA_PREVIOUS));
         setupOrUpdatePreference(mGestureArrowRight, mScreenOffGestureSharedPreferences
                 .getString(PREF_GESTURE_ARROW_RIGHT, ActionConstants.ACTION_MEDIA_NEXT));
+        setupOrUpdatePreference(mGestureDownSwipe, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_DOWN_SWIPE, ActionConstants.ACTION_NOTIFICATIONS));
+        setupOrUpdatePreference(mGestureUpSwipe, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_UP_SWIPE, ActionConstants.ACTION_SCREENSHOT));
+        setupOrUpdatePreference(mGestureLeftSwipe, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_LEFT_SWIPE, ActionConstants.ACTION_LAST_APP));
+        setupOrUpdatePreference(mGestureRightSwipe, mScreenOffGestureSharedPreferences
+                .getString(PREF_GESTURE_RIGHT_SWIPE, ActionConstants.ACTION_MENU));
 
         boolean enableGestures =
                 mScreenOffGestureSharedPreferences.getBoolean(PREF_GESTURE_ENABLE, true);
@@ -207,6 +227,18 @@ public class ScreenOffGesture extends PreferenceFragment implements
         } else if (preference == mGestureArrowRight) {
             settingsKey = PREF_GESTURE_ARROW_RIGHT;
             dialogTitle = R.string.gesture_arrow_right_title;
+        } else if (preference == mGestureDownSwipe) {
+            settingsKey = PREF_GESTURE_DOWN_SWIPE;
+            dialogTitle = R.string.gesture_swipe_down_title;
+        } else if (preference == mGestureUpSwipe) {
+            settingsKey = PREF_GESTURE_UP_SWIPE;
+            dialogTitle = R.string.gesture_swipe_up_title;
+        } else if (preference == mGestureLeftSwipe) {
+            settingsKey = PREF_GESTURE_LEFT_SWIPE;
+            dialogTitle = R.string.gesture_swipe_left_title;
+        } else if (preference == mGestureRightSwipe) {
+            settingsKey = PREF_GESTURE_RIGHT_SWIPE;
+            dialogTitle = R.string.gesture_swipe_right_title;
         }
         if (settingsKey != null) {
             showDialogInner(DLG_SHOW_ACTION_DIALOG, settingsKey, dialogTitle);
@@ -246,6 +278,14 @@ public class ScreenOffGesture extends PreferenceFragment implements
                 ActionConstants.ACTION_MEDIA_PREVIOUS).commit();
         editor.putString(PREF_GESTURE_ARROW_RIGHT,
                 ActionConstants.ACTION_MEDIA_NEXT).commit();
+        editor.putString(PREF_GESTURE_DOWN_SWIPE,
+                ActionConstants.ACTION_NOTIFICATIONS).commit();
+        editor.putString(PREF_GESTURE_UP_SWIPE,
+                ActionConstants.ACTION_SCREENSHOT).commit();
+        editor.putString(PREF_GESTURE_LEFT_SWIPE,
+                ActionConstants.ACTION_LAST_APP).commit();
+        editor.putString(PREF_GESTURE_RIGHT_SWIPE,
+                ActionConstants.ACTION_MENU).commit();
         editor.commit();
         KernelControl.enableGestures(true);
         reloadSettings();

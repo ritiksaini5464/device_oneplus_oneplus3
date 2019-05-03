@@ -63,6 +63,29 @@
                 android:persistent="false"
                 android:dependency="enable_gestures" />
 
+            <Preference
+                android:key="gesture_down_swipe"
+                android:title="@string/gesture_swipe_down_title"
+                android:persistent="false"
+                android:dependency="enable_gestures" />
+				
+            <Preference
+                android:key="gesture_up_swipe"
+                android:title="@string/gesture_swipe_up_title"
+                android:persistent="false"
+                android:dependency="enable_gestures" />
+				
+            <Preference
+                android:key="gesture_left_swipe"
+                android:title="@string/gesture_swipe_left_title"
+                android:persistent="false"
+                android:dependency="enable_gestures" />
+				
+            <Preference
+                android:key="gesture_right_swipe"
+                android:title="@string/gesture_swipe_right_title"
+                android:persistent="false"
+                android:dependency="enable_gestures" />
         </PreferenceCategory>
 
 </PreferenceScreen>

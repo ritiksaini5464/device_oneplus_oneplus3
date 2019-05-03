@@ -81,6 +81,10 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int GESTURE_LTR_SCANCODE = 253;
     private static final int GESTURE_GTR_SCANCODE = 254;
     private static final int GESTURE_V_UP_SCANCODE = 255;
+    private static final int GESTURE_DOWN_SWIPE_SCANCODE = 256;
+    private static final int GESTURE_UP_SWIPE_SCANCODE = 257;
+    private static final int GESTURE_LEFT_SWIPE_SCANCODE = 258;
+    private static final int GESTURE_RIGHT_SWIPE_SCANCODE = 259;
 
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_CIRCLE_SCANCODE,
@@ -88,7 +92,11 @@ public class KeyHandler implements DeviceKeyHandler {
         GESTURE_V_SCANCODE,
         GESTURE_V_UP_SCANCODE,
         GESTURE_LTR_SCANCODE,
-        GESTURE_GTR_SCANCODE
+        GESTURE_GTR_SCANCODE,
+        GESTURE_DOWN_SWIPE_SCANCODE,
+        GESTURE_UP_SWIPE_SCANCODE,
+        GESTURE_LEFT_SWIPE_SCANCODE,
+        GESTURE_RIGHT_SWIPE_SCANCODE
     };
 
     private final Context mContext;
@@ -242,7 +250,31 @@ public class KeyHandler implements DeviceKeyHandler {
                         ActionConstants.ACTION_MEDIA_NEXT);
                         doHapticFeedback();
                 break;
-			}
+            case GESTURE_DOWN_SWIPE_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_DOWN_SWIPE,
+                        ActionConstants.ACTION_NOTIFICATIONS);
+                        doHapticFeedback();
+                break;
+            case GESTURE_UP_SWIPE_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_UP_SWIPE,
+                        ActionConstants.ACTION_SCREENSHOT);
+                        doHapticFeedback();
+                break;
+            case GESTURE_LEFT_SWIPE_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_LEFT_SWIPE,
+                        ActionConstants.ACTION_LAST_APP);
+                        doHapticFeedback();
+                break;
+            case GESTURE_RIGHT_SWIPE_SCANCODE:
+                action = getGestureSharedPreferences()
+                        .getString(ScreenOffGesture.PREF_GESTURE_RIGHT_SWIPE,
+                        ActionConstants.ACTION_MENU);
+                        doHapticFeedback();
+                break;
+    	    }
 
             if (action == null || action != null && action.equals(ActionConstants.ACTION_NULL)) {
                 return;

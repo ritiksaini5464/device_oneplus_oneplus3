@@ -83,6 +83,10 @@
     <string name="gesture_circle_title">Circle</string>
     <string name="gesture_double_swipe_title">Double Finger Swipe Down</string>
     <string name="gesture_double_tap_title">Double Tap</string>
+    <string name="gesture_swipe_down_title">Swipe Down</string>
+    <string name="gesture_swipe_left_title">Swipe Left</string>
+    <string name="gesture_swipe_right_title">Swipe Right</string>
+    <string name="gesture_swipe_up_title">Swipe Up</string>
 
     <string name="button_swap_title">Swap Buttons</string>
     <string name="button_swap_summary">Swap the order of recents and back buttons</string>
