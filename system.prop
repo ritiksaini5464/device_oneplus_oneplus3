@@ -119,7 +119,7 @@ persist.radio.volte.dan_support=true
 persist.vendor.radio.aosp_usr_pref_sel=true 
 
 # Enable GL composition backpressure.
-debug.sf.enable_gl_backpressure=1
+debug.sf.disable_backpressure=1
 
 # UI
 PRODUCT_PROPERTY_OVERRIDES += \
