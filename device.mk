@@ -469,6 +469,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
