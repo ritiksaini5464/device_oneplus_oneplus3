@@ -40,20 +40,14 @@ SRC_MEDIA_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/media
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-$(LOCAL_PATH) \
-hardware/qcom-caf/$(YOUR_HW_PLATFORM)
-
-
+$(LOCAL_PATH) /hardware/qcom-caf/$(YOUR_HW_PLATFORM)\
+vendor/nxp/opensource/pn5xx
 
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    device/oneplus/oneplus3 \
-    vendor/nxp/opensource/pn5xx
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -560,4 +554,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 #inherit our OneplusShit
-$(call inherit-product, device/oneplus/OneplusShit/opshit.mk)
+#$(call inherit-product, device/oneplus/OneplusShit/opshit.mk)
