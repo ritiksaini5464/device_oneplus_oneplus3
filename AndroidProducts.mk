@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/du_oneplus3.mk
+    $(LOCAL_DIR)/stag_oneplus3.mk
