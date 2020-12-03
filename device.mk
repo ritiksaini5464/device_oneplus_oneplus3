@@ -27,23 +27,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-YOUR_HW_PLATFORM := msm8996
-
-# Hardware
-PRODUCT_BOARD_PLATFORM := $(YOUR_HW_PLATFORM)
-PRODUCT_USES_QCOM_HARDWARE := true
-
-# HALS
-SRC_AUDIO_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/audio
-SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/display
-SRC_MEDIA_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/media
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-$(LOCAL_PATH) \
-hardware/qcom-caf/$(YOUR_HW_PLATFORM)
-
-
 
 
 # Overlays
@@ -507,6 +490,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
 
+# Tri-state keys
+PRODUCT_PACKAGES += \
+    KeyHandler
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
@@ -560,4 +547,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 #inherit our OneplusShit
-$(call inherit-product, device/oneplus/OneplusShit/opshit.mk)
+#$(call inherit-product, device/oneplus/OneplusShit/opshit.mk)
