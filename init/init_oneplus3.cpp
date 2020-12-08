@@ -49,8 +49,7 @@ constexpr const char* BUILD_DESCRIPTION[] = {
 };
 
 constexpr const char* BUILD_FINGERPRINT[] = {
-        "OnePlus/OnePlus3/OnePlus3:8.0.0/OPR1.170623.032/02281230:user/release-keys",
-        "OnePlus/OnePlus3/OnePlus3T:8.0.0/OPR1.170623.032/02281230:user/release-keys",
+        "google/sunfish/sunfish:11/RP1A.201105.002/6869500:user/release-keys",
 };
 
 void property_override(char const prop[], char const value[]) {
