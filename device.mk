@@ -200,10 +200,11 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=rome
+#onepluscamera
+$(call inherit-product, vendor/addons/onepluscamera/config.mk)
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
