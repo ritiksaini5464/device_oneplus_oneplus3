@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/corvus_oneplus3.mk
+    $(LOCAL_DIR)/kangos_oneplus3.mk
