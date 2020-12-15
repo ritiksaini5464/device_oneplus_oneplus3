@@ -204,9 +204,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #$(call inherit-product, vendor/addons/onepluscamera/config.mk)
 
 #google camera
-$(call inherit-product, packages/apps/googlecamera/config.mk)
+#$(call inherit-product, packages/apps/googlecamera/config.mk)
 # Camera
 PRODUCT_PACKAGES += \
+    Snap \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
