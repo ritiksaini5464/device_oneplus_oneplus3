@@ -20,13 +20,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oneplus3 device
 $(call inherit-product, device/oneplus/oneplus3/device.mk)
 
-# Inherit some common Xtended stuff.
-$(call inherit-product, vendor/stag/main.mk)
+# Inherit some common ProjectStreak stuff.
+   $(call inherit-product, vendor/streak/config/common_full_phone.mk)
 
+TARGET_USES_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := false
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2019-10-01
 
-PRODUCT_NAME := stag_oneplus3
+PRODUCT_NAME := streak_oneplus3
 PRODUCT_DEVICE := oneplus3
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
