@@ -23,6 +23,15 @@ $(call inherit-product, device/oneplus/oneplus3/device.mk)
 # Inherit some common Xtended stuff.
 $(call inherit-product, vendor/kangos/config/common.mk)
 
+# Setup Gapps options
+IS_PHONE := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+USE_GAPPS := false
+
+
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2019-10-01
 
