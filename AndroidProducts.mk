@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/stag_oneplus3.mk
+    $(LOCAL_DIR)/streak_oneplus3.mk
