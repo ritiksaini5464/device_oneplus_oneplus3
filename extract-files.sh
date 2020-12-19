@@ -65,6 +65,10 @@ function blob_fixup() {
     ;;
     esac
 }
+# Load camera shim
+CAMERA_SHIM="$COMMON_BLOB_ROOT"/vendor/lib/libmms_hal_vstab.so
+patchelf --add-needed libmms_hal_vstab_shim.so "$CAMERA_SHIM"
+
 
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$XTENDED_ROOT" false "$CLEAN_VENDOR"
