@@ -27,6 +27,9 @@ $(call inherit-product,vendor/octavi/config/common.mk)
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2019-10-01
 
+OCTAVI_BUILD_TYPE := Unofficial
+OCTAVI_DEVICE_MAINTAINER := Royals5464
+
 PRODUCT_NAME := octavi_oneplus3
 PRODUCT_DEVICE := oneplus3
 PRODUCT_MANUFACTURER := OnePlus
