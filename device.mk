@@ -220,7 +220,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #$(call inherit-product, vendor/addons/onepluscamera/config.mk)
 
 #google camera
-$(call inherit-product, packages/apps/googlecamera/config.mk)
+#$(call inherit-product, packages/apps/googlecamera/config.mk)
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -469,6 +469,7 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libmms_hal_vstab_shim \
     libcutils_shim \
     libui_shim
 
