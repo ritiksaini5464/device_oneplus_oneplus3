@@ -511,8 +511,8 @@ PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
 
 # Tri-state keys
-PRODUCT_PACKAGES += \
-    KeyHandler
+#PRODUCT_PACKAGES += \
+    #KeyHandler
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -565,6 +565,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-
+# Oneplus3Parts
+PRODUCT_PACKAGES += \
+    Oneplus3Parts
 #inherit our OneplusShit
 $(call inherit-product, device/oneplus/OneplusShit/opshit.mk)
