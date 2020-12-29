@@ -70,6 +70,9 @@ function blob_fixup() {
 setup_vendor "$DEVICE" "$VENDOR" "$XTENDED_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+# Load camera shim
+CAMERA_SHIM="$COMMON_BLOB_ROOT"/vendor/lib/libmms_hal_vstab.so
+patchelf --add-needed libmms_hal_vstab_shim.so "$CAMERA_SHIM"
 
 "$MY_DIR"/setup-makefiles.sh
 
